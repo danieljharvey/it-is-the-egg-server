@@ -1,0 +1,29 @@
+{
+  "name": "it-is-the-egg-server",
+  "version": "0.1.0",
+  "description": "Server for It Is The Egg",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"prettier": "prettier --write ./**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljharvey/it-is-the-egg-server.git"
+  },
+  "keywords": [
+    "Egg"
+  ],
+  "author": "Daniel J Harvey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danieljharvey/it-is-the-egg-server/issues"
+  },
+  "homepage": "https://github.com/danieljharvey/it-is-the-egg-server#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mysql": "^2.15.0",
+    "prettier": "^1.7.4"
+  }
+}
