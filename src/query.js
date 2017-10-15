@@ -1,13 +1,9 @@
 // mysql querying page
 
-const connectionDetails = {
-  host: process.env.HOST,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE
-};
-
 const mysql = require("mysql");
+const { loadConfig } = require("./config");
+
+const connectionDetails = loadConfig();
 
 const getConnection = () => mysql.createConnection(connectionDetails);
 
@@ -20,11 +16,12 @@ const query = (sql, values) => {
     connection.connect();
 
     connection.query(sql, values, (error, results, fields) => {
-		
-						if (error) {
+      if (error) {
         return reject(error.sqlMessage);
       }
-
+		if (results.length === 0) {
+			return reject("No results found!");
+		}
       return resolve(results);
     });
 

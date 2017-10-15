@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 app.route("/levels")
 	.get((req, res, next) => {
 		
-		const levelID = req.params("levelID");
+		const levelID = req.param("levelID");
 		
 		getLevel(levelID).then(data => {
 			const sendData = {
